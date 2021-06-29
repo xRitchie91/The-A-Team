@@ -12,7 +12,7 @@ const addEmployee = employeeInfo => {
 
     employeeInfo.forEach(employee => {    
         
-        const { firstName, lastName, id, role } = employee;
+        const { lastName, firstName, id, role } = employee;
         let newEntry = '';
         let info = '';
 
