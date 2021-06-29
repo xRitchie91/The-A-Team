@@ -46,5 +46,16 @@ const addEmployee = employeeInfo => {
                             <p class="subtitle is-6 has-text-black">${newEntry.getRole()}</p>
                         </div>
                     </div>
+                    <div class="content">
+                        <p>${newEntry.getEmail()}<br />
+                        ${newEntry.getId()}<br />
+                        ${info}</p>
+                    </div>
+                </div>
+            </div>
+        </div>`  
+            });
+            return allCards;
+        };
         
-                    
+        
