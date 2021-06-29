@@ -32,3 +32,19 @@ const addEmployee = employeeInfo => {
             default:
                 newEntry = new Employee(formatName(lastName), formatName(firstName), id);
         };
+
+        allCards += `
+        <div class="column is-one-quarter-desktop">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            ${newEntry.getIcon()}
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4 has-text-black">${newEntry.getName()}</p>
+                            <p class="subtitle is-6 has-text-black">${newEntry.getRole()}</p>
+                        </div>
+                    </div>
+        
+                    
