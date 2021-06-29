@@ -12,4 +12,4 @@ The A Team is command line application that generates a manager's subordinates i
 - [GitHub](https://xritchie91.github.io/The-A-Team/)
 
 ## Reach Out
-[xRitchie91](https://github.com/xRitchie91/The-A-Team/tree/main)
+[xRitchie91](https://github.com/xRitchie91)
