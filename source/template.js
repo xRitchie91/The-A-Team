@@ -10,8 +10,8 @@ const addEmployee = employeeInfo => {
     // employee cards
     let allCards = '';
 
-    employeeInfo.forEach(employee => {    
-        
+    employeeInfo.forEach(employee => {
+
         const { lastName, firstName, id, role } = employee;
         let newEntry = '';
         let info = '';
@@ -21,7 +21,7 @@ const addEmployee = employeeInfo => {
                 newEntry = new Manager(formatName(lastName), formatName(firstName), id, employee.officeNumber);
                 info = newEntry.getOfficeNumber();
                 break;
-            case 'Engineer': 
+            case 'Engineer':
                 newEntry = new Engineer(formatName(lastName), formatName(firstName), id, employee.github);
                 info = newEntry.getGithub();
                 break;
@@ -53,9 +53,23 @@ const addEmployee = employeeInfo => {
                     </div>
                 </div>
             </div>
-        </div>`  
-            });
-            return allCards;
-        };
+        </div>`
+    });
+    return allCards;
+};
+
+const generateHTML = templateData => {
+    return `
+            <!DOCTYPE html>
+            <html lang="en">
         
-        
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
+                <title>Team Generator</title>
+                <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/socialmedia/apple/285/briefcase_1f4bc.png">
+            </head>
+            
