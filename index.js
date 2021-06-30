@@ -76,4 +76,86 @@ const prompts = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: ({ firstName }) => `What is ${formatName(firstName)}'s GitHub userame?`,
+        when: ({ role }) => {
+            if (role === 'Engineer') {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter a username!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: ({ firstName }) => `What school does ${formatName(firstName)} go to?`,
+        when: ({ role }) => {
+            if (role === 'Intern') {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: schoolInput => {
+            if (schoolInput) {
+                return true;
+            } else {
+                console.log('Please enter a school name!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'addEmployee',
+        message: 'Would you like to add another employee?',
+        default: true
     }
+]
+
+const promptUser = () => {
+
+    return inquirer.prompt(prompts)
+    .then(userResponse => {
+
+        // adds to employee data array
+        employeeRoster.push(userResponse);
+
+        // adds another employee based on user selection
+        if (userResponse.addEmployee) {
+            return promptUser();
+        } else {
+            return employeeRoster;
+        };
+    });
+};
+
+const writePage = (htmlContent) => {
+    fs.writeFile('./dist/index.html', htmlContent, err => {
+        if (err) {
+            throw err
+        };
+        console.log('Success! Your roster is created!');
+    });
+};
+
+console.log(`
+Welcome to The A Team Employee Roster Generator!
+`);
+
+promptUser()
+    .then(data => generateHTML(data))
+    .then(generatedPage => writePage(generatedPage))
+    .catch(err => console.log(err));
