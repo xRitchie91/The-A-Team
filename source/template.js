@@ -81,8 +81,15 @@ const generateHTML = templateData => {
                         </div>
                     </div>
                 </section>
-              
+                <main class="m-6">
+                    <div class="columns is-flex is-flex-wrap-wrap is-flex-direction-row is-justify-content-center">
+                        ${addEmployee(templateData)}
+                    </div>
                 </main>
-
-            
+            </body>
+            </html>
+            `;
+        };
+        
+        module.exports = generateHTML;
                     
