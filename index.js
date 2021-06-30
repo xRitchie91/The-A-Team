@@ -1,12 +1,47 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./source/template');
+const formatName = require('./utils/helper');
+const employeeRoster = [];
 
-// employee questions function
 const prompts = [
     {
         type: 'list',
         name: 'role',
-        message: 'What\'s your employee\'s role?',
-        choices:
-    }
-]
+        message: 'What is the employee\'s role?',
+        choices: // allows application to create only one manager
+            () => {
+            if (employeeRoster.some(employee => employee.role === 'Manager')) {
+                return ['Engineer', 'Intern']    
+            } else {
+                return ['Manager', 'Engineer', 'Intern']
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'firstName',
+        message: ({ role }) => `What is the ${role.toLowerCase()}'s first name?`,
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Don\'t forget their first name!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'lastName',
+        message: ({ firstName }) => `What is ${formatName(firstName)}'s last name?`,
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Don\'t forget their last name!');
+                return false;
+            }
+        }
+    },
+    
