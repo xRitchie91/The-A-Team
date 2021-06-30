@@ -73,3 +73,16 @@ const generateHTML = templateData => {
                 <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/socialmedia/apple/285/briefcase_1f4bc.png">
             </head>
             
+            <body>
+                <section class="hero is-info is-fullheight">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">The A Team</h1>
+                        </div>
+                    </div>
+                </section>
+              
+                </main>
+
+            
+                    
