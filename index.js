@@ -44,4 +44,36 @@ const prompts = [
             }
         }
     },
-    
+    {
+        type: 'input',
+        name: 'id',
+        message: ({ firstName }) => `What is ${formatName(firstName)}'s ID number?`,
+        validate: idInput => {
+            if (!isNaN(parseInt(idInput))) {
+                return true;
+            } else {
+                console.log('Please enter a valid ID number!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'officeNumber',
+        message:  ({ firstName }) => `What is ${formatName(firstName)}'s office number?`,
+        when: ({ role }) => {
+            if (role === 'Manager') {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: officeNumberInput => {
+            if (!isNaN(parseInt(officeNumberInput))) {
+                return true;
+            } else {
+                console.log('Please enter a valid number!');
+                return false;
+            }
+        }
+    }
