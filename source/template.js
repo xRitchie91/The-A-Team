@@ -8,10 +8,8 @@ const Intern = require('../lib/intern');
 const addEmployee = employeeInfo => {
 
     // employee cards
-    let allCards = '';
-
-    employeeInfo.forEach(employee => {
-
+    let allCards = ''
+    employeeInfo.forEach(employee => {    
         const { lastName, firstName, id, role } = employee;
         let newEntry = '';
         let info = '';
@@ -21,7 +19,9 @@ const addEmployee = employeeInfo => {
                 newEntry = new Manager(formatName(lastName), formatName(firstName), id, employee.officeNumber);
                 info = newEntry.getOfficeNumber();
                 break;
-            case 'Engineer':
+
+            case 'Engineer': 
+
                 newEntry = new Engineer(formatName(lastName), formatName(firstName), id, employee.github);
                 info = newEntry.getGithub();
                 break;
@@ -92,4 +92,3 @@ const generateHTML = templateData => {
         };
         
         module.exports = generateHTML;
-                    
