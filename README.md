@@ -4,7 +4,8 @@ The A Team is command line application that generates a manager's subordinates i
 ## Table of Contents
 
 ## Usage
-### Screenshots of Deployment
+### Screenshot of Deployment
+![The A Team](https://user-images.githubusercontent.com/74946954/123897915-e7c0f080-d929-11eb-9388-6609aed543ce.jpg)
 
 ### Demo
 
