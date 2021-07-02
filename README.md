@@ -1,5 +1,5 @@
 # Description
-The A Team is command line application that generates a company's employee roster into a webpage.
+The A Team is a command line application that generates a company's employee roster into a webpage.
 
 ## Table of Contents
 - [Description](#description)
