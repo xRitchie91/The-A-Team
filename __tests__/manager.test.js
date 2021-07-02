@@ -1,11 +1,11 @@
 const Manager = require ('../lib/manager');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const manager = new Manager('Scott', 'Mike', 1, 100);
+const manager = new Manager('Duncan', 'Tim', 1, 100);
 
 test('creates a manager object', () => {
-    expectToBe(manager.lastName,'Scott');
-    expectToBe(manager.firstName, 'Mike');
+    expectToBe(manager.lastName,'Duncan');
+    expectToBe(manager.firstName, 'Tim');
     expectStr(manager.email, '@');
     expectNum(manager.id);
     expectNum(manager.officeNumber);
