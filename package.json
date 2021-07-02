@@ -1,0 +1,20 @@
+{
+  "name": "ateam",
+  "version": "1.0.0",
+  "description": "The A Team is command line application that generates a manager's subordinates into an html webpage.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^16.3.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
