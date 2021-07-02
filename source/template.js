@@ -8,8 +8,10 @@ const Intern = require('../lib/intern');
 const addEmployee = employeeInfo => {
 
     // employee cards
-    let allCards = ''
-    employeeInfo.forEach(employee => {    
+    let allCards = '';
+
+    employeeInfo.forEach(employee => {
+
         const { lastName, firstName, id, role } = employee;
         let newEntry = '';
         let info = '';
@@ -19,9 +21,7 @@ const addEmployee = employeeInfo => {
                 newEntry = new Manager(formatName(lastName), formatName(firstName), id, employee.officeNumber);
                 info = newEntry.getOfficeNumber();
                 break;
-
-            case 'Engineer': 
-
+            case 'Engineer':
                 newEntry = new Engineer(formatName(lastName), formatName(firstName), id, employee.github);
                 info = newEntry.getGithub();
                 break;
@@ -73,11 +73,12 @@ const generateHTML = templateData => {
                 <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/socialmedia/apple/285/briefcase_1f4bc.png">
             </head>
             
-            <body>
-                <section class="hero is-info is-fullheight">
+            <body class="is-fullheight is-dark">
+                <section class="hero is-bold is-info">
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">The A Team</h1>
+                            <h2 class="subtitle>Employee Roster Generator</h2>
                         </div>
                     </div>
                 </section>
@@ -87,8 +88,12 @@ const generateHTML = templateData => {
                     </div>
                 </main>
             </body>
+            <footer class="is-info is-bold">
+                &copy; The A Team 2021
+            </footer>
             </html>
             `;
         };
         
         module.exports = generateHTML;
+                    
