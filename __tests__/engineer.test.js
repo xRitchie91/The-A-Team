@@ -1,7 +1,7 @@
-const Engineer = require('../lib/Engineer');
+const Engineer = require('../lib/engineer');
 const { expectToBe, expectStr, expectNum } = require('../utils/expect');
 
-const engineer = new Engineer('Steve', 'Woz', 11, 'stevewoz');
+const engineer = new Engineer('Woz', 'Steve', 11, 'stevewoz');
 
 test('creates an engineer object', () => {
     expectToBe(engineer.lastName, 'Woz');
@@ -25,7 +25,7 @@ test('ID', () => {
 });
 
 test('name', () => {
-    expectStr(engineer.getName(), `${engineer.lastName} ${engineer.firstName}`);
+    expectStr(engineer.getName(), `${engineer.firstName} ${engineer.lastName}`);
 });
 
 test('role', () => {
