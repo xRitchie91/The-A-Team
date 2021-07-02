@@ -10,6 +10,15 @@ The A Team is command line application that generates a company's employee roste
 - [Reach Out](#questions)
 
 ## Usage
+Users must first:
+   - perform a git pull from the repository to their local directory.
+   - install jest (npm install jest).
+   - install [node.js](https://nodejs.org/en/download/)
+
+- Users then will be able to use the command line to:
+   - run tests (npm test)
+   - run the application (node index)
+
 ### Screenshots
 ![ateam](https://user-images.githubusercontent.com/74946954/124229672-95bbce80-dad3-11eb-9f86-b0a6b0f8553f.jpg)
 
