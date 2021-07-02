@@ -1,5 +1,5 @@
 const expectToBe = (obj, value) => {
-    expectToBe(obj).toBe(value);
+    expect(obj).toBe(value);
 };
 
 const expectStr = (obj, substr) => {
@@ -10,4 +10,4 @@ const expectNum = obj => {
     expect(obj).toEqual(expect.any(Number));
 };
 
-module.exports = { expectToBe, expectStr, expectnum };
+module.exports = { expectToBe, expectStr, expectNum };
