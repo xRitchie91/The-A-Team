@@ -15,7 +15,7 @@ Users must first:
    - install jest (npm install jest).
    - install [node.js](https://nodejs.org/en/download/)
 
-- Users then will be able to use the command line to:
+Users then will be able to use the command line to:
    - run tests (npm test)
    - run the application (node index)
 
